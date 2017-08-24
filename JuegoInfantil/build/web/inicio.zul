@@ -1,0 +1,40 @@
+<!--<?link rel="stylesheet" type="text/css" href="/css/style.css"?>-->
+<?link rel="stylesheet" type="text/css" href="/css/bootstrap/css/bootstrap.min.css"?>
+<?page title="Juego infantil" contentType="text/html;charset=UTF-8"?>
+<zk contentStyle="overflow:auto" >
+    <hbox self="@define(content)" 
+          vflex="1" hflex="1" align="center"
+          pack="center" spacing="20px"  >
+        <vlayout>
+            <window id="loginWin"
+                    apply="com.ec.controlador.LoginController"
+                    title="Ingreso al juego infantil" border="normal" hflex="min">
+                <vbox hflex="min" align="center">
+                    <image src="/imagenes/login.png"  id="btnPrincipal" />
+                    <grid hflex="min">
+                        <columns>
+                            <column hflex="min" align="right" />
+                            <column />
+                        </columns>
+                        
+                        <rows>
+                            <row>
+                                Usuario :
+                                <textbox id="account" width="100%"  value="" constraint="no empty: Ingrese su nombre de usuario."/>
+                            </row>
+                            <row>
+                                Constraseña :
+                                <textbox id="password" value="" type="password" constraint="no empty: Ingrese una clave." width="100%"/>						
+                            </row>
+                        </rows>
+                    </grid>
+                    <label id="message" sclass="warn" value="" />
+                    <button label="ENTRAR" src="/imagenes/user.png"   id="buttonEntrar"/>
+                     
+                </vbox>
+            </window>
+           
+        </vlayout>
+    </hbox>
+
+</zk>

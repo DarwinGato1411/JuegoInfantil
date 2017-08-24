@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="/css/style.css"?>
+<?init class="com.ec.seguridad.Autentificador"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/plantilla/plantilla.zul"?>
+<?page title="Tabla" contentType="text/html;charset=UTF-8"?>
+<zk >
+    <hbox self="@define(content)" apply="org.zkoss.bind.BindComposer" 
+          viewModel="@id('vm') @init('com.ec.controlador.Administrar')" >
+        
+        <tabbox width="100%"   >
+            <tabs >
+                <tab label="COLORES" sclass="menutabs" image="../imagenes/user.png"/>
+                <tab label="FAMILIA" sclass="menutabs" image="../imagenes/user.png"/>
+                <tab label="MEDIO AMBIENTE" sclass="menutabs" image="../imagenes/user.png"/>
+               
+            </tabs>
+            <tabpanels width="100%"  >
+                <tabpanel>    
+                </tabpanel>
+                <tabpanel>    
+                </tabpanel>
+            </tabpanels>
+            
+        </tabbox>
+    </hbox>
+
+    
+</zk>
+
+

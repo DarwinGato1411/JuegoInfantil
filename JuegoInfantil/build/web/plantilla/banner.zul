@@ -1,0 +1,15 @@
+<?link rel="stylesheet" type="text/css" href="/css/style.css"?>   
+<div hflex="1" vflex="1" sclass="banner" apply="com.ec.controlador.LogoutController" >
+    <menubar  width="100%" apply="com.ec.controlador.MenuOpciones" >
+        <menuitem id="idBienvenido" label="Inicio"  image="/imagenes/house.png" />
+        <menuitem id="idJuego" label="Administrar juegos" image="/imagenes/gadmin.png" />
+        <!--<menuitem  id="idReporte" label="Reportes"  image="/imagenes/chart_bar.png" />-->
+        <!--<menuitem label="Administracion"  image="/imagenes/procesar.gif" />-->
+        <menuitem  label="Usuario: ${sessionScope.usuario.nombreUsuario}" 
+                   style=" float:rigth;position:absolute;right:10%;" 
+                   if="${not sessionScope.userCredential.anonymous}" sclass="info"  />
+        <menuitem id="logout" label="Salir"  style=" float:rigth;position:absolute;right:1%;" 
+                  image="/imagenes/cancel.png" />
+                  
+    </menubar>    
+</div>

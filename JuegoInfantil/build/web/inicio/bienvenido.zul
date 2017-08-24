@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="/css/style.css"?>
+<?init class="com.ec.seguridad.Autentificador"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/plantilla/plantilla.zul"?>
+<!--<?page title="Tabla de informacion" contentType="text/html;charset=UTF-8"?>-->
+<zk  >
+   <hbox self="@define(content)" apply="org.zkoss.bind.BindComposer" 
+          viewModel="@id('vm') @init('com.ec.controlador.Bienvenido')" 
+          vflex="1" hflex="1" align="center"
+          pack="center"  >
+        <vlayout>
+            <window>
+                <!--<vbox hflex="min" align="center">-->
+                    <image src="/imagenes/saludar.png"  />
+ 
+                <!--</vbox>-->
+            </window>
+           
+        </vlayout>
+    </hbox>
+
+</zk>

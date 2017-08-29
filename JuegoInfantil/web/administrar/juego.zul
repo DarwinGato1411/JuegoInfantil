@@ -15,9 +15,162 @@
                
             </tabs>
             <tabpanels width="100%"  >
-                <tabpanel>    
+                <tabpanel> 
+                    <listbox model="@load(vm.listaJuegoColor)" nonselectableTags="*" 
+                             mold="paging" pageSize="4"  >
+                        <custom-attributes org.zkoss.zul.listbox.rod="true"/>
+                        <auxhead>
+                            <auxheader colspan="8">  
+                                Descripcòn: <textbox maxlength="200" width="25%" 
+                                                     value="@bind(vm.juego.juegoNombre)"/> 
+                                Cladificacion:<radiogroup  selectedItem="@bind(vm.juego.jueTipoJuego)" >
+                                    <radio label="COLOR " value="COLOR"/>
+                                    <!--<radio  label="FAMILIA " value="FAMILIA"/>-->
+                                    <!--<radio  label="AMBIENTE " value="AMBIENTE"/>-->
+                                </radiogroup>                               
+                                <button  label="Nuevo registro"  onClick="@command('subirArchivo')" 
+                                         tooltiptext="Nuevo registro"
+                                         image="../imagenes/add.png" />
+                            </auxheader>
+                        </auxhead>
+                        <!--<listhead  menupopup="editPopup">-->
+                        <listhead  >
+                         
+                            <listheader align="center" width="25%">Descripciòn</listheader>
+                            <listheader align="center" width="60%">Direccion de la imagen</listheader>
+                            <listheader align="center" width="10%">Clasificaciòn</listheader>
+                            <listheader  align="center" width="5%">Eliminar</listheader>
+                        </listhead>
+                   
+                
+                        <template name="model">
+                            <listitem > 
+                                <listcell>
+                                    <textbox maxlength="100" width="96%" 
+                                             value="@bind(each.juegoNombre)"/>
+                                </listcell>  
+                                <listcell>
+                                    <textbox maxlength="200" width="96%" 
+                                             value="@bind(each.jueImagen)"/>
+                                </listcell>  
+                                <listcell>
+                                    <textbox maxlength="50" readonly="true" width="96%" 
+                                             value="@bind(each.jueTipoJuego)"/>
+                                </listcell>  
+                                <listcell>
+                                    <button image="/imagenes/cancel.png" 
+                                            onClick="@command('eliminar',valor=each)" 
+                                            tooltiptext="Eliminar registro"/>
+                                </listcell>  
+
+                            </listitem>
+                        </template>
+                    </listbox>   
                 </tabpanel>
+                
                 <tabpanel>    
+                    <listbox model="@load(vm.listaJuegoFamilia)" nonselectableTags="*" 
+                             mold="paging" pageSize="4"  >
+                        <custom-attributes org.zkoss.zul.listbox.rod="true"/>
+                        <auxhead>
+                            <auxheader colspan="8">  
+                                Descripcòn: <textbox maxlength="200" width="25%" 
+                                                     value="@bind(vm.juego.juegoNombre)"/> 
+                                Cladificacion:<radiogroup  selectedItem="@bind(vm.juego.jueTipoJuego)" >
+                                    <!--<radio label="COLOR " value="COLOR"/>-->
+                                    <radio  label="FAMILIA " value="FAMILIA"/>
+                                    <!--<radio  label="AMBIENTE " value="AMBIENTE"/>-->
+                                </radiogroup>                               
+                                <button  label="Nuevo registro"  onClick="@command('subirArchivo')" 
+                                         tooltiptext="Nuevo registro"
+                                         image="../imagenes/add.png" />
+                            </auxheader>
+                        </auxhead>
+                        <!--<listhead  menupopup="editPopup">-->
+                        <listhead  >
+                         
+                            <listheader align="center" width="25%">Descripciòn</listheader>
+                            <listheader align="center" width="60%">Direccion de la imagen</listheader>
+                            <listheader align="center" width="10%">Clasificaciòn</listheader>
+                            <listheader  align="center" width="5%">Eliminar</listheader>
+                        </listhead>
+                   
+                
+                        <template name="model">
+                            <listitem > 
+                                <listcell>
+                                    <textbox maxlength="100" width="96%" 
+                                             value="@bind(each.juegoNombre)"/>
+                                </listcell>  
+                                <listcell>
+                                    <textbox maxlength="200" width="96%" 
+                                             value="@bind(each.jueImagen)"/>
+                                </listcell>  
+                                <listcell>
+                                    <textbox maxlength="50" readonly="true" width="96%" 
+                                             value="@bind(each.jueTipoJuego)"/>
+                                </listcell>  
+                                <listcell>
+                                    <button image="/imagenes/cancel.png" 
+                                            onClick="@command('eliminar',valor=each)" 
+                                            tooltiptext="Eliminar registro"/>
+                                </listcell>  
+
+                            </listitem>
+                        </template>
+                    </listbox>   
+                </tabpanel>
+                <tabpanel>  
+                    <listbox model="@load(vm.listaJuegoAmbiente)" nonselectableTags="*" 
+                             mold="paging" pageSize="4"  >
+                        <custom-attributes org.zkoss.zul.listbox.rod="true"/>
+                        <auxhead>
+                            <auxheader colspan="8">  
+                                Descripcòn: <textbox maxlength="200" width="25%" 
+                                                     value="@bind(vm.juego.juegoNombre)"/> 
+                                Cladificacion:<radiogroup  selectedItem="@bind(vm.juego.jueTipoJuego)" >
+                                    <!--<radio label="COLOR " value="COLOR"/>-->
+                                    <!--<radio  label="FAMILIA " value="FAMILIA"/>-->
+                                    <radio  label="AMBIENTE " value="AMBIENTE"/>
+                                </radiogroup>                               
+                                <button  label="Nuevo registro"  onClick="@command('subirArchivo')" 
+                                         tooltiptext="Nuevo registro"
+                                         image="../imagenes/add.png" />
+                            </auxheader>
+                        </auxhead>
+                        <!--<listhead  menupopup="editPopup">-->
+                        <listhead  >
+                         
+                            <listheader align="center" width="25%">Descripciòn</listheader>
+                            <listheader align="center" width="60%">Direccion de la imagen</listheader>
+                            <listheader align="center" width="10%">Clasificaciòn</listheader>
+                            <listheader  align="center" width="5%">Eliminar</listheader>
+                        </listhead>
+                   
+                
+                        <template name="model">
+                            <listitem > 
+                                <listcell>
+                                    <textbox maxlength="100" width="96%" 
+                                             value="@bind(each.juegoNombre)"/>
+                                </listcell>  
+                                <listcell>
+                                    <textbox maxlength="200" width="96%" 
+                                             value="@bind(each.jueImagen)"/>
+                                </listcell>  
+                                <listcell>
+                                    <textbox maxlength="50" readonly="true" width="96%" 
+                                             value="@bind(each.jueTipoJuego)"/>
+                                </listcell>  
+                                <listcell>
+                                    <button image="/imagenes/cancel.png" 
+                                            onClick="@command('eliminar',valor=each)" 
+                                            tooltiptext="Eliminar registro"/>
+                                </listcell>  
+
+                            </listitem>
+                        </template>
+                    </listbox>     
                 </tabpanel>
             </tabpanels>
             
